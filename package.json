@@ -5,6 +5,9 @@
   "repository": "https://github.com/hercobulus/api-rest-with-typescript.git",
   "author": "Daniel Miranda <danielmiranda132@yahoo.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts"
+  },
   "devDependencies": {
     "@types/node": "^17.0.24",
     "ts-node-dev": "^1.1.8",
