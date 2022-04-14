@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import routes from './routes';
+import routes from '@shared/http/routes';
 import AppError from '@shared/errors/AppError';
 import AppDataSource from '@shared/typeorm';
 import logger from '@shared/logger';
