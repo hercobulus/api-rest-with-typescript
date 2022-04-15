@@ -19,7 +19,7 @@ class UsersRepository extends Repository<User> {
     return user;
   }
 
-  public async findByEmail(email: string): PRomise<user | undefined> {
+  public async findByEmail(email: string): Promise<User | undefined> {
     const user = await this.findOne({
       where: {
         email,
