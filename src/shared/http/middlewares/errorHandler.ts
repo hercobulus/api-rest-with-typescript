@@ -15,8 +15,6 @@ export default function errorHandler(
     });
   }
 
-  console.log('Erro', error);
-
   return response.status(500).json({
     status: 'Error',
     message: 'Internal server error',
