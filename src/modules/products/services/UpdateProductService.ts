@@ -40,3 +40,5 @@ class UpdateProductService {
     return product;
   }
 }
+
+export default UpdateProductService;
