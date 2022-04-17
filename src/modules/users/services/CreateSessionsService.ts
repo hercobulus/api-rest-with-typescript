@@ -4,6 +4,7 @@ import { sign } from 'jsonwebtoken';
 import { getCustomRepository } from 'typeorm';
 import UsersRepository from '../repositories/UsersRepository';
 import User from '../typeorm/entities/User';
+import authConfig from '@config/auth';
 
 interface IRequest {
   email: string;
@@ -28,16 +29,16 @@ class CreateSessionService {
     if (!passwordConfirmed) {
       throw new AppError('Incorrect email/password combination', 401);
     }
-    const secret = '55983729e54567a16081c38720920d06';
+
     const token = await sign(
       {
         id: user.id,
         name: user.name,
       },
-      secret,
+      authConfig.jwt.secret,
       {
         subject: user.id,
-        expiresIn: '1d',
+        expiresIn: authConfig.jwt.expiresIn,
       },
     );
 
